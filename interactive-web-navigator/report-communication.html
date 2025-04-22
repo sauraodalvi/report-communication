@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Navigator - Report Communication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white shadow-md">
+            <div class="p-4 border-b">
+                <h1 class="text-xl font-bold">Medical Dashboard</h1>
+            </div>
+            <nav class="p-4">
+                <ul class="space-y-2">
+                    <li><a href="static-preview.html" class="block p-2 rounded hover:bg-gray-100">Dashboard</a></li>
+                    <li><a href="static-preview.html" class="block p-2 rounded bg-blue-100 text-blue-700">Archives</a></li>
+                    <li><a href="#" class="block p-2 rounded hover:bg-gray-100">Reports</a></li>
+                    <li><a href="#" class="block p-2 rounded hover:bg-gray-100">Waiting List</a></li>
+                    <li><a href="#" class="block p-2 rounded hover:bg-gray-100">Operation</a></li>
+                    <li><a href="#" class="block p-2 rounded hover:bg-gray-100">Test Status</a></li>
+                    <li><a href="#" class="block p-2 rounded hover:bg-gray-100">Report Prints</a></li>
+                    <li><a href="#" class="block p-2 rounded hover:bg-gray-100">Inventory</a></li>
+                    <li><a href="#" class="block p-2 rounded hover:bg-gray-100">Analytics</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Header -->
+            <header class="bg-white shadow-sm p-4">
+                <div class="flex items-center justify-between w-full">
+                    <div class="flex items-center gap-4">
+                        <a href="static-preview.html" class="flex items-center gap-2 text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                            <span>Back</span>
+                        </a>
+                        <h1 class="font-medium text-lg">Report Communication</h1>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button class="p-2 rounded-full hover:bg-gray-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+                        </button>
+                        <div class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                            U
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="flex-1 overflow-y-auto p-4">
+                <div class="bg-white rounded-lg shadow">
+                    <!-- Date Filter -->
+                    <div class="p-3 border-b border-gray-200 flex justify-between items-center">
+                        <div class="text-sm font-medium">21st Apr, 2025 - 21st Apr, 2025</div>
+                        <div class="flex items-center gap-2">
+                            <button class="px-3 py-1 bg-blue-500 text-white text-sm rounded">Search</button>
+                            <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded">Reset</button>
+                            <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded">Export</button>
+                        </div>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr class="border-b border-gray-200 bg-gray-50 text-left text-xs">
+                                    <th class="p-2 font-medium text-gray-800">
+                                        <div class="flex items-center gap-1">
+                                            <input type="checkbox" class="h-4 w-4" />
+                                            <span>Reg No.</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </th>
+                                    <th class="p-2 font-medium text-gray-800">
+                                        <div class="flex items-center gap-1">
+                                            <span>Patient</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </th>
+                                    <th class="p-2 font-medium text-gray-800">
+                                        <div class="flex items-center gap-1">
+                                            <span>Report Date</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </th>
+                                    <th class="p-2 font-medium text-gray-800">
+                                        <div class="flex items-center gap-1">
+                                            <span>Bill ID</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </th>
+                                    <th class="p-2 font-medium text-gray-800">
+                                        <div class="flex items-center gap-1">
+                                            <span>Phone (SMS)</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </th>
+                                    <th class="p-2 font-medium text-gray-800">
+                                        <div class="flex items-center gap-1">
+                                            <span>Email</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </th>
+                                    <th class="p-2 font-medium text-gray-800">
+                                        <div class="flex items-center gap-1">
+                                            <span>Report Type</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </th>
+                                    <th class="p-2 font-medium text-gray-800">
+                                        <div class="flex items-center gap-1">
+                                            <span>SMS Status</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </th>
+                                    <th class="p-2 font-medium text-gray-800">
+                                        <div class="flex items-center gap-1">
+                                            <span>Email Status</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </th>
+                                    <th class="p-2 font-medium text-gray-800">
+                                        <div class="flex items-center gap-1">
+                                            <span>Patient Portal</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </th>
+                                    <th class="p-2 font-medium text-gray-800">
+                                        <div class="flex items-center gap-1">
+                                            <span>WhatsApp</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </th>
+                                    <th class="p-2 font-medium text-gray-800">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Row 1 -->
+                                <tr class="border-b border-gray-200 hover:bg-gray-50 text-xs">
+                                    <td class="p-2">
+                                        <div class="flex items-center gap-1">
+                                            <input type="checkbox" class="h-4 w-4" />
+                                            <span>10743</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-2">Mr. Musaddiq (M)</td>
+                                    <td class="p-2">21st Apr, 2025</td>
+                                    <td class="p-2">SAMPLE-1234</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full">9876543210</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full">Yes</span>
+                                    </td>
+                                    <td class="p-2">Uric Acid, Serum</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                    </td>
+                                    <td class="p-2">N/A</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <div class="flex gap-1">
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send SMS</button>
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send Email</button>
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send WA</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 2 -->
+                                <tr class="border-b border-gray-200 hover:bg-gray-50 text-xs">
+                                    <td class="p-2">
+                                        <div class="flex items-center gap-1">
+                                            <input type="checkbox" class="h-4 w-4" />
+                                            <span>148158</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-2">Mr/G RATNA RAO (M)</td>
+                                    <td class="p-2">21st Apr, 2025</td>
+                                    <td class="p-2">SAMPLE-5678</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full">8765432109</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">No</span>
+                                    </td>
+                                    <td class="p-2">2D echocardiography</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full">Sent</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                    </td>
+                                    <td class="p-2">21-04-2025 (12:30PM)</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <div class="flex gap-1">
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send SMS</button>
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send Email</button>
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send WA</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 3 -->
+                                <tr class="border-b border-gray-200 hover:bg-gray-50 text-xs">
+                                    <td class="p-2">
+                                        <div class="flex items-center gap-1">
+                                            <input type="checkbox" class="h-4 w-4" />
+                                            <span>10745</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-2">Mr.Mohammed Faiyaz (M)</td>
+                                    <td class="p-2">21st Apr, 2025</td>
+                                    <td class="p-2">SAMPLE-9012</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full">7654321098</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full">Yes</span>
+                                    </td>
+                                    <td class="p-2">Complete Blood Picture (CBP)</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                    </td>
+                                    <td class="p-2">21-04-2025 (12:45PM)</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <div class="flex gap-1">
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send SMS</button>
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send Email</button>
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send WA</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 4 -->
+                                <tr class="border-b border-gray-200 hover:bg-gray-50 text-xs">
+                                    <td class="p-2">
+                                        <div class="flex items-center gap-1">
+                                            <input type="checkbox" class="h-4 w-4" />
+                                            <span>10746</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-2">Mrs.Satyamma (F)</td>
+                                    <td class="p-2">21st Apr, 2025</td>
+                                    <td class="p-2">SAMPLE-3456</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full">6543210987</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">No</span>
+                                    </td>
+                                    <td class="p-2">Haemogram With ESR</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                    </td>
+                                    <td class="p-2">N/A</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">Pending</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <div class="flex gap-1">
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send SMS</button>
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send Email</button>
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send WA</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 5 -->
+                                <tr class="border-b border-gray-200 hover:bg-gray-50 text-xs">
+                                    <td class="p-2">
+                                        <div class="flex items-center gap-1">
+                                            <input type="checkbox" class="h-4 w-4" />
+                                            <span>143214</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-2">Mrs/TSVL KAMESWARI (F)</td>
+                                    <td class="p-2">21st Apr, 2025</td>
+                                    <td class="p-2">SAMPLE-7890</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full">5432109876</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full">Yes</span>
+                                    </td>
+                                    <td class="p-2">Pap Smear, Liquid Based (LBC)</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full">Sent</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full">Sent</span>
+                                    </td>
+                                    <td class="p-2">21-04-2025 (01:15PM)</td>
+                                    <td class="p-2">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full">Sent</span>
+                                    </td>
+                                    <td class="p-2">
+                                        <div class="flex gap-1">
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send SMS</button>
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send Email</button>
+                                            <button class="px-2 py-1 bg-blue-500 text-white text-xs rounded">Send WA</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="p-3 border-t border-gray-200 flex justify-between items-center">
+                        <div class="text-sm">Showing 1 to 5 of 9 entries</div>
+                        <div class="flex gap-1">
+                            <button class="px-3 py-1 border border-gray-300 rounded text-sm">Previous</button>
+                            <button class="px-3 py-1 bg-blue-500 text-white rounded text-sm">1</button>
+                            <button class="px-3 py-1 border border-gray-300 rounded text-sm">2</button>
+                            <button class="px-3 py-1 border border-gray-300 rounded text-sm">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
