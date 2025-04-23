@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Navigator - Patient Details (Not Sent Example)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Delivery Status Modal -->
+    <div id="deliveryStatusModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg shadow-lg w-full max-w-6xl max-h-[90vh] overflow-y-auto">
+            <!-- Modal Header -->
+            <div class="p-4 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white z-10">
+                <h2 class="text-xl font-semibold">Musaddiq (Bill ID: 14817)</h2>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="p-6">
+                <!-- Tabs -->
+                <div class="border-b border-gray-200 mb-6">
+                    <div class="flex justify-between items-center">
+                        <div class="flex -mb-px">
+                            <button onclick="showTab('patientTabContent')" class="tab-button active py-2 px-4 border-b-2 border-blue-500 font-medium text-blue-600 flex items-center gap-2">
+                                Patient
+                                <span class="px-1.5 py-0.5 bg-green-100 text-green-800 rounded-full text-xs font-medium">Sent</span>
+                            </button>
+                            <button onclick="showTab('referralTabContent')" class="tab-button py-2 px-4 text-gray-600 hover:text-gray-800 flex items-center gap-2">
+                                Referral
+                                <span class="px-1.5 py-0.5 bg-red-100 text-red-800 rounded-full text-xs font-medium">Not Sent</span>
+                            </button>
+                            <button onclick="showTab('organizationTabContent')" class="tab-button py-2 px-4 text-gray-600 hover:text-gray-800 flex items-center gap-2">
+                                Organization
+                                <span class="px-1.5 py-0.5 bg-green-100 text-green-800 rounded-full text-xs font-medium">Sent</span>
+                            </button>
+                        </div>
+                        <button onclick="refreshModal()" class="text-blue-600 hover:text-blue-800 flex items-center gap-1 px-4 py-2" title="Refresh status">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                            Refresh
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="p-4 text-center">
+                    <p>This is an example of the Delivery Status Modal with "Sent" and "Not Sent" tags.</p>
+                    <p class="mt-2">The logic is:</p>
+                    <ul class="text-left list-disc pl-8 mt-2">
+                        <li>If any communication channel (SMS, WhatsApp, Email) has "Sent" status, the tag will be "Sent"</li>
+                        <li>Otherwise, the tag will be "Not Sent"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 border-t border-gray-200 flex justify-between">
+                <div>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded mr-2">Communication Settings</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded">Edit Patient Info</button>
+                </div>
+                <button onclick="closeModal()" class="px-4 py-2 bg-gray-800 text-white rounded">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function closeModal() {
+            window.location.href = 'patient-details.html';
+        }
+        
+        function showTab(tabId) {
+            // This would normally show/hide tabs
+            console.log('Showing tab:', tabId);
+        }
+        
+        function refreshModal() {
+            // This would normally refresh the modal data
+            console.log('Refreshing modal data');
+        }
+    </script>
+</body>
+</html>
